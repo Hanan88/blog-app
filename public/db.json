@@ -1,13 +1,8 @@
 {
   "blogs": [
     {
-      "id": "1",
-      "date": "2024-07-09",
-      "image": "/blog-images/react-hooks.jpg",
-      "category": "Technology",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nibh et lectus ultricies posuere.",
-      "title": "Introduction to React Hooks",
-      "author": "John Doe"
+      "title": "Introduction to React Hooks updated!",
+      "id": "1"
     },
     {
       "id": "2",

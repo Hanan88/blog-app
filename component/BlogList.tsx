@@ -1,16 +1,18 @@
-"use client";
-
+"use client"
 import { FunctionComponent, useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import useFetchData from '../hooks/useFetchData';
 import { Blog } from '../types/types';
 import axiosInstance from '../utils/axiosInstance';
 import DeleteConfirmationModal from './modals/DeleteConfirmationModal';
+import UpdateBlogModal from './modals/UpdateBlogModal';
+
 
 const BlogList: FunctionComponent = () => {
   const { isLoading, isError, data, error } = useFetchData<Blog[]>('/blogs');
   const queryClient = useQueryClient();
   const [deleteId, setDeleteId] = useState<number | null>(null);
+  const [updateBlog, setUpdateBlog] = useState<Blog | null>(null);
 
   const deleteBlogMutation = useMutation(
     (id: number) => axiosInstance.delete(`/blogs/${id}`),
@@ -23,12 +25,20 @@ const BlogList: FunctionComponent = () => {
   );
 
   const handleDelete = (id: number) => setDeleteId(id);
-  const handleCloseModal = () => setDeleteId(null);
+  const handleCloseDeleteModal = () => setDeleteId(null);
 
   const handleConfirmDelete = () => {
     if (deleteId !== null) {
       deleteBlogMutation.mutate(deleteId);
     }
+  };
+
+  const handleEdit = (blog: Blog) => setUpdateBlog(blog);
+  const handleCloseUpdateModal = () => setUpdateBlog(null);
+
+  const handleUpdate = () => {
+    queryClient.invalidateQueries('blogs');
+    setUpdateBlog(null);
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -43,8 +53,9 @@ const BlogList: FunctionComponent = () => {
             <p>{blog.description}</p>
             <div className="mt-2">
               <button
+                type="button"
                 className="px-4 py-2 mt-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-700"
-                onClick={() => console.log('Edit functionality')}
+                onClick={() => handleEdit(blog)}
               >
                 Edit
               </button>
@@ -58,14 +69,20 @@ const BlogList: FunctionComponent = () => {
           </div>
         ))}
       </div>
+      
       <DeleteConfirmationModal
         isOpen={deleteId !== null}
-        onClose={handleCloseModal}
+        onClose={handleCloseDeleteModal}
         onDelete={handleConfirmDelete}
+      />
+      <UpdateBlogModal
+        isOpen={updateBlog !== null}
+        onClose={handleCloseUpdateModal}
+        blog={updateBlog}
+        onUpdate={handleUpdate}
       />
     </div>
   );
 };
 
 export default BlogList;
-
