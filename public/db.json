@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "date": "2024-07-09",
+        "image": "/blog-images/react-hooks.jpg",
+        "category": "Technology",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel nibh et lectus ultricies posuere.",
+        "title": "Introduction to React Hooks",
+        "author": "John Doe"
+    },
+    {
+        "id": 2,
+        "date": "2024-07-08",
+        "image": "/blog-images/typescript.jpg",
+        "category": "Programming",
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+        "title": "Getting Started with TypeScript",
+        "author": "Jane Smith"
+    },
+    {
+        "id": 3,
+        "date": "2024-07-07",
+        "image": "/blog-images/web-design.jpg",
+        "category": "Design",
+        "description": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "title": "Mastering Responsive Web Design",
+        "author": "Alice Johnson"
+    },
+    {
+        "id": 4,
+        "date": "2024-07-06",
+        "image": "/blog-images/ai.jpg",
+        "category": "Science",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "title": "The Future of Artificial Intelligence",
+        "author": "Mark Wilson"
+    },
+    {
+        "id": 5,
+        "date": "2024-07-05",
+        "image": "/blog-images/successful-startups.png",
+        "category": "Business",
+        "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "title": "Strategies for Startup Success",
+        "author": "Emily Brown"
+    },
+    {
+        "id": 6,
+        "date": "2024-07-04",
+        "image": "/blog-images/health.png",
+        "category": "Health",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "Benefits of Meditation",
+        "author": "Michael Clark"
+    }
+]
