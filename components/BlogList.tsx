@@ -7,6 +7,7 @@ import { Blog } from "@/types/types";
 import { useMutation, useQueryClient } from "react-query";
 import axiosInstance from "@/utils/axiosInstance";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogList: FunctionComponent = () => {
   const { isLoading, isError, data, error } = useFetchData<Blog[]>('/blogs');
@@ -71,7 +72,9 @@ const BlogList: FunctionComponent = () => {
               <h5 className='text-xs text-[#7b7b7b]'>{blog?.date}</h5>
             </div>
             <div>
-              <Image src={blog?.image} width="200" height="200" alt="blog-image" className='w-full h-[200px] object-cover' />
+              <Link href={`/blogs/${blog.id}`}>
+                <Image src={blog?.image} width="200" height="200" alt="blog-image" className='w-full h-[200px] object-cover' />
+              </Link>
             </div>
             <h2 className="text-xl font-bold">{blog.title}</h2>
             <p className='text-sm'>{blog.description}</p>
