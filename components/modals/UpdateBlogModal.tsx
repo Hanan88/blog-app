@@ -1,6 +1,6 @@
+import { FunctionComponent, useState } from 'react';
 import { Blog } from '@/types/types';
 import axiosInstance from '@/utils/axiosInstance';
-import { FunctionComponent, useState } from 'react';
 
 interface UpdateBlogModalProps {
   isOpen: boolean;
@@ -31,7 +31,7 @@ const UpdateBlogModal: FunctionComponent<UpdateBlogModalProps> = ({
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center z-50 ${isOpen ? '' : 'hidden'}`}>
-      <div className="bg-white p-4 rounded shadow-md">
+      <div className="bg-white p-4 rounded shadow-md w-3/5">
         <h2 className="text-xl font-bold mb-4">Update Blog</h2>
         {blog && (
           <form>

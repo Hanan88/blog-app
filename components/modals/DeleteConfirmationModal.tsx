@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
 interface DeleteConfirmationModalProps {
   isOpen: boolean;
@@ -6,14 +6,12 @@ interface DeleteConfirmationModalProps {
   onDelete: () => void;
 }
 
-const DeleteConfirmationModal: FunctionComponent<
-  DeleteConfirmationModalProps
-> = ({ isOpen, onClose, onDelete }) => {
+const DeleteConfirmationModal: FunctionComponent<DeleteConfirmationModalProps> = ({ isOpen, onClose, onDelete }) => {
   if (!isOpen) return null;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-4 rounded shadow-md">
+      <div className="bg-white p-4 rounded shadow-md  w-3/5">
         <p className="mb-4">Are you sure you want to delete this blog?</p>
         <div className="flex justify-end">
           <button
