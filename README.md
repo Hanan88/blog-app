@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog App
+
+This is a Next.js application for managing blogs. The application supports creating, updating, deleting, and viewing blog posts. It also includes pagination for browsing through multiple pages of blog posts.
+
+## Features
+
+- View list of blog posts
+- Create a new blog post
+- Edit an existing blog post
+- Delete a blog post
+- View details of a specific blog post
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- TailwindCSS
+- React Query
+- JSON Server
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up and run the project locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure you have the following installed on your local machine:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+NOTE: if you want to upload image, it should be link from 'https://www.pexels.com/'
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Hanan88/blog-app
+   cd blog-app
+   ```
+2. **Install the dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Configure the JSON Server:**
 
-## Deploy on Vercel
+   The JSON Server is used to simulate a backend API. The data is stored in public/db.json.
+   To start the JSON Server, run the following command:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npx json-server --watch public/db.json --port 3001
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Run the Next.js development server:**
+
+   ```bash
+    npm run dev
+   ```
+
+5. **Open your browser and navigate to:**
+
+   ```bash
+    http://localhost:3000
+   ```
