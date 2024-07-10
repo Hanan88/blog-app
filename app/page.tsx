@@ -1,4 +1,4 @@
-import BlogList from "@/component/BlogList";
+import BlogList from "@/components/BlogList";
 import RootLayout from "./layout";
 
 export default function Home() {
